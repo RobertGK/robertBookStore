@@ -9,7 +9,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>My JSP 'index.jsp' starting page</title>
+    <title>My JSP 'LoginStatus.jsp' starting page</title>
+    
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">    
@@ -18,16 +19,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
+
   </head>
   
   <body>
-    <form action="loginJudge.do" method = "POST">
-	NAME:<input type="text" name="name" >
-	<br>
-	PASSWORD:<input type="password" name="password" >
-	<br><br>
-	<input type="submit" value="Submit">
-	<input type="reset" value="Reset">
-	</form> 
+    This is my JSP page. <br>
+    <%= (String)request.getAttribute("status") %>
   </body>
 </html>
