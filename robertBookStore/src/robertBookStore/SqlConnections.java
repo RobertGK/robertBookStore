@@ -1,7 +1,7 @@
 package robertBookStore;
 import java.sql.*;
 
-public abstract class SqlConnections {
+public class SqlConnections{
 	private static String url = "jdbc:mysql://localhost:3306/robertbook";
 	private static String user = "root";
 	private static String password = "HOUguohui102866" ;
@@ -19,10 +19,10 @@ public abstract class SqlConnections {
 		// TODO Auto-generated method stub
 
 	}
-	public static Connection  getConnection(){
+	public Connection getConnection(){
 		if(conn == null){
 			try{
-				conn = DriverManager.getConnection(url ,user,password);
+				conn = DriverManager.getConnection(url,user,password);
 			}
 			catch(SQLException e){
 				System.out.println("can't build the connection!");

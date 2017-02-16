@@ -36,10 +36,11 @@ public class LoginJudge extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
 		String user = request.getParameter("name");
 		String password = request.getParameter("password");
-		String status = new loginJudgeStatement().loginJudge(user, password);
+		response.getWriter().append(user).append("  "+ password);
+//		response.getWriter().append(test2.getName());
+		String status = new loginJudgeStatement().loginJudge(user,password);
 		request.setAttribute("status", status);
 		RequestDispatcher rd = request.getRequestDispatcher("LoginStatus.jsp");
 		rd.forward(request,response);
